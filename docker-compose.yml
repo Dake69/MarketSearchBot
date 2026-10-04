@@ -1,0 +1,10 @@
+services:
+  monitor:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - ./data:/app/data
+    shm_size: "1gb"
